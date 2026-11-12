@@ -1,0 +1,17 @@
+#cloud-config
+hostname: my-vm-debian
+
+users:
+  - name: user
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: [sudo]
+    lock_passwd: false
+    plain_text_passwd: user
+    ssh_authorized_keys:
+      - __SSH_PUBLIC_KEY__
+
+ssh_pwauth: false
+
+runcmd:
+  - sync

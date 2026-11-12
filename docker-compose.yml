@@ -1,0 +1,19 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    volumes:
+      - vm-data:/app/vm # диск ВМ, seed.iso, сокеты
+      - vm-keys:/app/keys  # SSH-ключ
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"  # интерфейс: http://localhost:8080
+    depends_on:
+      - backend
+
+volumes:
+  vm-data:
+  vm-keys:

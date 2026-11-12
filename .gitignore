@@ -1,0 +1,13 @@
+vm/*
+!vm/.gitkeep
+
+__pycache__/
+*.pyc
+.venv/
+
+node_modules/
+dist/
+
+.vscode/
+.idea/
+keys/

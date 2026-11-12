@@ -1,0 +1,6 @@
+# Дополнение для хостов с KVM: ВМ работает намного быстрее
+# запуск: docker compose -f docker-compose.yml -f docker-compose.kvm.yml up --build
+services:
+  backend:
+    devices:
+      - /dev/kvm
